@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Dhruva Sambrani">
+  <title>Information-Theoretic Bell Inequalities</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Information-Theoretic Bell Inequalities</h1>
+  <p class="subtitle">QCQI Phy631 Term Paper</p>
+  <p class="author">Dhruva Sambrani</p>
+</section>
+
+<section>
+<section id="local-realism" class="title-slide slide level1">
+<h1>Local Realism</h1>
+
+</section>
+<section id="locality" class="slide level2">
+<h2>Locality</h2>
+<p>It is the belief that systems which are “far away” in space from our system will have no effect.</p>
+<p>This assumption is the first assumption in Special Relativity too. This leads to a finite speed for causality to travel, which is the speed of light.</p>
+<p>Philosophically too this seems to be a requirement of basic Physics, after all, what is the use of any of our laws if another particle on the other side of the universe can affect your particle.</p>
+</section>
+<section id="realism" class="slide level2">
+<h2>Realism</h2>
+<p>This is the assumption that objects have properties whether or not said properties are measured. Is the moon there if you are not looking at it?</p>
+<p>This too has philosophical implications. If no property of an object is real and is instead only an outcome of our measurement, what are we describing in Physics? Isn’t the world then dependant on the observer and not the observed?</p>
+</section></section>
+<section>
+<section id="some-mathematical-formalism" class="title-slide slide level1">
+<h1>Some Mathematical formalism</h1>
+
+</section>
+<section id="bayes-theorem" class="slide level2">
+<h2>Bayes’ Theorem</h2>
+<p><span class="math display">\[p(a,b) = p(a|b)p(b) = p(b|a)p(a)\]</span></p>
+</section>
+<section id="information" class="slide level2">
+<h2>Information</h2>
+<p><span class="math display">\[\mathcal I(p) = -\log(p)\]</span> <span class="math display">\[\mathcal I(p(a,b)) = -\log(p(a,b))\]</span> <span class="math display">\[\mathcal I(p(b)) = -\log(p(b))\]</span> <span class="math display">\[\mathcal I(p(a|b)) = -\log(p(a|b))\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Then, from Bayes’ Theorem,</p>
+<p><span class="math display">\[-\log p(a,b) = -\log (p(a|b)p(b)) = -\log(p(b|a)p(a))\]</span> <span class="math display">\[\implies \mathcal I(a,b) = \mathcal I(a|b)+\mathcal I(b) = \mathcal I(b|a) +\mathcal I(a)\]</span></p>
+</section>
+<section id="mean-information" class="slide level2">
+<h2>Mean information</h2>
+<p><span class="math display">\[\mathcal H(A,B) = \sum_{a,b}p(a,b)\mathcal I(a,b)\]</span></p>
+<p>This is the Shannon Entropy!</p>
+</section>
+<section class="slide level2">
+
+<p>Similar to the Information Bayes’ Theorem,</p>
+<p><span class="math display">\[\mathcal{H}(A,B) = \mathcal H (A|B) + \mathcal{H}(B)=\mathcal H(B|A) + \mathcal H(A)\]</span></p>
+</section>
+<section id="mutual-information" class="slide level2">
+<h2>Mutual Information</h2>
+<p><span class="math display">\[\mathcal I(a;b) = \mathcal I(a) - \mathcal I(a|b) = \mathcal I(b) - \mathcal I(b|a) = \mathcal I(b;a)\]</span></p>
+<p><span class="math display">\[\mathcal H(A;B) = \mathcal H(A) - \mathcal H(A|B) = \mathcal H(B) - \mathcal H(B|A) = \mathcal H(B;A)\]</span></p>
+</section>
+<section id="two-inequalities-of-information-theory" class="slide level2">
+<h2>Two Inequalities of Information Theory</h2>
+<p><span class="math display">\[\mathcal H(A | B) \le \mathcal H(A) \le \mathcal H(A, B)\]</span></p>
+<p>The left-hand inequality means that removing a condition never decreases the information carried by a quantity. The right-hand inequality means that two quantities never carry less information than either quantity carries separately.</p>
+</section></section>
+<section>
+<section id="bells-inequality" class="title-slide slide level1">
+<h1>Bell’s Inequality</h1>
+<p><strong>The simplest one</strong></p>
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<p>Consider two systems, <span class="math inline">\(\mathcal A\)</span> and <span class="math inline">\(\mathcal{B}\)</span>, with the set of measurable quantities <span class="math inline">\(A\)</span> and <span class="math inline">\(A&#39;\)</span>, and, <span class="math inline">\(B\)</span> and <span class="math inline">\(B&#39;\)</span> respectively.</p>
+<p><span class="math inline">\(A\)</span> and <span class="math inline">\(A&#39;\)</span> (and by extension, <span class="math inline">\(B\)</span> and <span class="math inline">\(B&#39;\)</span>) may not, in general, commute, so cannot be measured simultaneously. Hence a run of the experiment will involve measuring <strong>only one</strong> of either <span class="math inline">\(A\)</span> or <span class="math inline">\(A&#39;\)</span>.</p>
+<p>Further, also assume that the systems <span class="math inline">\(\mathcal{A}\)</span> and <span class="math inline">\(\mathcal{B}\)</span>, are “far away” in space.</p>
+</section>
+<section id="properties-of-observables" class="slide level2">
+<h2>Properties of Observables</h2>
+<p>This proof of no hidden variable theory being able to explain Quantum Mechanics is one by contradiction.</p>
+<p>Let us assume the observables(<span class="math inline">\(A\)</span> and its friends) are all real and local. To recap, this means that the systems “actually” have a value for each property. That is <span class="math inline">\(\mathcal{A}\)</span> <em>is</em> <span class="math inline">\(|a, a&#39;\rangle\)</span><a href="#/fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>(and similarly for <span class="math inline">\(\mathcal B\)</span>).</p>
+<p>Further, any measurements on <span class="math inline">\(\mathcal{A}\)</span> should not effect <span class="math inline">\(\mathcal{B}\)</span> and vice versa, as these systems are well separated and properties are local.</p>
+</section>
+<section id="what-we-know" class="slide level2">
+<h2>What we know</h2>
+<ol type="1">
+<li class="fragment">Though we can not measure <span class="math inline">\(A\)</span> and <span class="math inline">\(A&#39;\)</span> separately, we know <span class="math inline">\(p(a,a&#39;,b,b&#39;)\)</span> from which follow the pairwise probabilities, for eg., <span class="math inline">\(p(a,b) = \sum_{a&#39;,b&#39;}p(a,a&#39;,b,b&#39;)\)</span></li>
+<li class="fragment"><span class="math inline">\(p(a) = \sum_{b}p(a,b)\)</span>, <span class="math inline">\(p(b|a) = p(a,b)/p(a)\)</span></li>
+</ol>
+</section>
+<section id="how-do-we-find-out-what-we-want-to-know" class="slide level2">
+<h2>How do we find out what we want to know</h2>
+<ol type="1">
+<li class="fragment">Run this experiment with a physical system</li>
+<li class="fragment">Measure <span class="math inline">\(p(b|a)\)</span></li>
+<li class="fragment">Check if the conditional statistics of <span class="math inline">\(B\)</span> is predicted by <span class="math inline">\(p(b|a)\)</span>
+<ol type="1">
+<li class="fragment">If it is able to, then the observables are local and objective</li>
+<li class="fragment">If it is unable to, then the observables are either not local or not objective or neither</li>
+</ol></li>
+</ol>
+</section>
+<section id="more-math" class="slide level2">
+<h2>More math</h2>
+<p><strong>A secret tool to help us later</strong></p>
+<p><a href="#/two-inequalities-of-information-theory">This</a> equation can be generalized to</p>
+<p><span class="math display">\[\begin{aligned}
+    \mathcal H(A,B) \le&amp;\  \mathcal{H}(A, B&#39;, A&#39;, B)\\
+    =&amp;\ \mathcal{H}(A|B&#39;,A&#39;,B)+\mathcal{H}(B&#39;|A&#39;,B)\\
+    &amp;+\mathcal{H}(A&#39;|B)+\mathcal{H}(B)
+\end{aligned}\]</span></p>
+</section></section>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Abuse of notation - While normally, <span class="math inline">\(|a, a&#39;\rangle\)</span> is used to denote a <em>simulataneous</em> eigenvector, here, we’re using it to represent a state which “actually” has <span class="math inline">\(a\)</span> and <span class="math inline">\(a&#39;\)</span> as values for <span class="math inline">\(A\)</span> and <span class="math inline">\(A&#39;\)</span><a href="#/fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1190,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
